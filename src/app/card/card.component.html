@@ -1,0 +1,19 @@
+<div id="content-card">
+  <span class="cardName">{{cardNumber != 1?otherCard[0].split(":")[1]:myCard[0].split(":")[1]}}</span>
+    <div class="row-card">
+      <div class="column-card">
+        {{(cardNumber == 1?myCard[1]:otherCard[1]).split(":")[0]}} - {{(cardNumber == 1?myCard[1]:otherCard[1]).split(":")[1]}}
+      </div>
+      <div class="column-card">
+        {{(cardNumber == 1?myCard[2]:otherCard[2]).split(":")[0]}} - {{(cardNumber == 1?myCard[2]:otherCard[2]).split(":")[1]}}
+      </div>
+    </div>
+    <div class="row-card">
+      <div class="column-card">
+        {{(cardNumber == 1?myCard[3]:otherCard[3]).split(":")[0]}} - {{(cardNumber == 1?myCard[3]:otherCard[3]).split(":")[1]}}
+      </div>
+      <div class="column-card">
+        {{(cardNumber == 1?myCard[4]:otherCard[4]).split(":")[0]}} - {{(cardNumber == 1?myCard[4]:otherCard[4]).split(":")[1]}}
+      </div>
+    </div>
+</div>

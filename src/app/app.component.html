@@ -1,0 +1,27 @@
+<div class="fullScreen">
+	<mat-toolbar color="primary" class="headerToolbar">
+		<mat-toolbar-row>
+			<span>WWE Card Game</span>
+    <span class="example-spacer"></span>
+    <mat-icon class="example-icon">refresh</mat-icon>
+    <mat-icon class="example-icon">help_outline</mat-icon>
+    <mat-icon class="example-icon">android</mat-icon>
+  </mat-toolbar-row>
+</mat-toolbar>
+  <div id="container">
+    <div [hidden]="!showOtherCard" id="header">
+      <app-card cardNumber="2" card={{otherCard}}></app-card>
+    </div>
+    <div id="content">
+      <div class="row">
+        <div class="column1" (click)="toggleCard()" [ngClass]="{'overlay': firstLoad}">
+        </div>
+        <div class="column2" [ngClass]="{'overlay': !showOtherCard}">
+        </div>
+      </div>
+    </div>
+    <div [hidden]="firstLoad" id="footer">
+      <app-card (click)="toggleOtherCard()"  cardNumber="1" card={{myCard}}></app-card>
+    </div>
+  </div>
+</div>

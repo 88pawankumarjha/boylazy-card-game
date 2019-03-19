@@ -1,0 +1,93 @@
+*{
+  /* border: red 1px solid; */
+  margin:0;
+  padding:0;
+  --commonHeight: 30vh; 
+  --headerToolbarHeight: 10vh;
+  --commonWidth: 100%;
+}
+
+/* nav bar */
+.example-icon {
+  padding: 0 14px;
+}
+.example-spacer {
+  flex: 1 1 auto;
+}
+.headerToolbar{
+  min-height: var(--headerToolbarHeight);
+}
+/* nav bar end */
+
+/* content */
+.row {
+  display: flex;
+}
+
+div#content{
+  background-color:rgb(50, 150, 71);
+  width:var(--commonWidth);
+  height:var(--commonHeight);
+  margin-top:var(--commonHeight);
+  position:fixed;
+} 
+  /* Create two equal columns that sits next to each other */
+  /* image source:  https://shop.wwe.com/wwe-superstars/#loaded_more=true */
+.column1 {
+  border: 1px solid white;
+  background-color:#bbb;
+  flex: 50%;
+  height: var(--commonHeight);
+  background-image: url("https://shop.wwe.com/on/demandware.static/-/Sites-wwe-us-navigation/default/dwb8d1545f/images/superstar-thumb-300/RomanReignsNEW.jpg");
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.column2 {
+  border: 1px solid white;
+  position:relative;
+  background-color:#aaa;
+  flex: 50%;
+  height: var(--commonHeight);
+  background-image: url("https://shop.wwe.com/on/demandware.static/-/Sites-wwe-us-navigation/default/dw3d76ae1e/images/superstar-thumb-300/SamoaJoeNEW.jpg");
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}  
+.overlay{
+  box-shadow: inset 0px 0px 0 2000px rgba(0,0,0);
+}
+/* Create two equal columns that sits next to each other */
+.fullScreen{
+  width:var(--commonWidth);
+  height: 85vh;
+  background: white;
+  /* background-image: url("https://www.setaswall.com/wp-content/uploads/2017/04/Material-Wallpaper-23-2664x2664-768x768.png"); */
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+div#header{
+  width:var(--commonWidth);
+  height:var(--commonHeight);
+  position:fixed;
+  z-index:100;
+  background-color:rgb(226, 27, 36);
+  /* display:none; */
+}
+div#footer{
+  /* display:none; */
+  width:var(--commonWidth);
+  height:var(--commonHeight);
+  position:fixed;
+  bottom:0;
+  background-color:rgb(22, 22, 22);
+}
+@media screen and (orientation:portrait) {
+}
+@media screen and (orientation:landscape) {
+}

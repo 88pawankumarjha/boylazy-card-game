@@ -10,7 +10,7 @@
 </mat-toolbar>
   <div id="container">
     <div [hidden]="!showOtherCard" id="header">
-      <app-card cardNumber="2" card={{otherCard}}></app-card>
+      <app-card cardNumber="2" card={{dataServiceService.otherCard}}></app-card>
     </div>
     <div id="content">
       <div class="row">
@@ -21,7 +21,7 @@
       </div>
     </div>
     <div [hidden]="firstLoad" id="footer">
-      <app-card cardNumber="1" card={{myCard}}></app-card>
+      <app-card cardNumber="1" card={{dataServiceService.myCard}}></app-card>
     </div>
   </div>
 </div>

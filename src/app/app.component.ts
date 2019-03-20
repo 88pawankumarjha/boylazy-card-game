@@ -11,9 +11,7 @@ export class AppComponent  {
   showOtherCard=false;
   myCard;
   otherCard;
-  constructor(private dataServiceService: DataServiceService){ 
-    this.myCard = this.dataServiceService.myCard;
-    this.otherCard = this.dataServiceService.otherCard;
+  constructor(private dataServiceService: DataServiceService){
   }
   showCard(){
     this.firstLoad=false;
@@ -27,27 +25,25 @@ export class AppComponent  {
   toggleOtherCard(index){
     
     this.showOtherCard=true;
-setTimeout(() => {
-    if(this.myCard[index].split(":")[0] != "Rank") {
-      if(+this.myCard[index].split(":")[1] >= +this.otherCard[index].split(":")[1]) {
-        alert(this.myCard[index].split(":")[0]+ " " + this.myCard[index].split(":")[1]+ " WIN " + this.otherCard[index].split(":")[1]);
-      }else{
-        alert(this.myCard[index].split(":")[0]+ " " + this.myCard[index].split(":")[1]+ " LOST " + this.otherCard[index].split(":")[1])
-      }
-    } else{
-      if(+this.myCard[index].split(":")[1] >= +this.otherCard[index].split(":")[1]) {
-        alert(this.myCard[index].split(":")[0]+ " " + this.myCard[index].split(":")[1]+ " LOST " + this.otherCard[index].split(":")[1]);
-      }else{
-        alert(this.myCard[index].split(":")[0]+ " " + this.myCard[index].split(":")[1]+ " WIN " + this.otherCard[index].split(":")[1])
-      }
-    }
-    
+    setTimeout(() => {
+        if(this.dataServiceService.myCard[index].split(":")[0] != "Rank") {
+          if(+this.dataServiceService.myCard[index].split(":")[1] >= +this.dataServiceService.otherCard[index].split(":")[1]) {
+            alert(this.dataServiceService.myCard[index].split(":")[0]+ " " + this.dataServiceService.myCard[index].split(":")[1]+ " WIN " + this.dataServiceService.otherCard[index].split(":")[1]);
+          }else{
+            alert(this.dataServiceService.myCard[index].split(":")[0]+ " " + this.dataServiceService.myCard[index].split(":")[1]+ " LOST " + this.dataServiceService.otherCard[index].split(":")[1])
+          }
+        } else{
+          if(+this.dataServiceService.myCard[index].split(":")[1] >= +this.dataServiceService.otherCard[index].split(":")[1]) {
+            alert(this.dataServiceService.myCard[index].split(":")[0]+ " " + this.dataServiceService.myCard[index].split(":")[1]+ " LOST " + this.dataServiceService.otherCard[index].split(":")[1]);
+          }else{
+            alert(this.dataServiceService.myCard[index].split(":")[0]+ " " + this.dataServiceService.myCard[index].split(":")[1]+ " WIN " + this.dataServiceService.otherCard[index].split(":")[1])
+          }
+        }
+        
     }, 1000);
     setTimeout(() => {
       this.hideCard();
     }, 2000);
-
-    
 
   }
 }

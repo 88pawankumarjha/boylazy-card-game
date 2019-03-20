@@ -10,9 +10,9 @@ div#content-card{
   width:var(--commonWidth);
   height:var(--commonHeight);
   position:fixed;
+text-align: center;
   
-} 
-  /* Create two equal columns that sits next to each other */
+}
   /* image source:  https://shop.wwe.com/wwe-superstars/#loaded_more=true */
 .column-card{
   flex: 50%;
@@ -20,7 +20,6 @@ div#content-card{
   border-bottom: 0.25vh solid yellow;
   border-top: 0.25vh solid yellow;
   border-radius: 20%;
-  text-align: center;
   vertical-align: middle;
   line-height: var(--cardHeight);
-} /* Create two equal columns that sits next to each other */
+}

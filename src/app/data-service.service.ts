@@ -8,6 +8,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class DataServiceService {
   
+  selCardField =0;
   myCard = ['Name:RomanReigns', 'Rank:1', 'Height:6.3', 'Weight:250', 'Fights Won:235'];
   otherCard = ['Name:SamoaJoe', 'Rank:2', 'Height:6.3', 'Weight:350', 'Fights Won:95'];
   arrCards: string [];
@@ -24,7 +25,15 @@ export class DataServiceService {
       }
     )
   }
-
+  setSelCardField(index){
+    this.selCardField = index;
+    setTimeout(() => {
+      this.selCardField = 0;
+    }, 2000);
+  }
+  getSelCardField(){
+    return this.selCardField;
+  }
   ngOnInit () {
   }
   fetchMyCard(){

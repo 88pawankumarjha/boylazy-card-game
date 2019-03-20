@@ -12,8 +12,9 @@ export class CardComponent implements OnInit {
   @Input() card: Array<String>;
   myCard = [];
   otherCard = [];
+  
   constructor(private dataServiceService: DataServiceService, private appComponent: AppComponent){ 
-    this.myCard = this.dataServiceService.myCard;
+    // this.myCard = this.dataServiceService.myCard;
     this.otherCard = this.dataServiceService.otherCard;
   }
   getKeys(map){

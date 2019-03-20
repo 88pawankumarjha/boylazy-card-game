@@ -6,7 +6,7 @@
 }
 
 div#content-card{
-  background-color:rgba(255, 0, 0, 0.788);
+  background-color:rgb(238, 39, 39);
   width:var(--commonWidth);
   height:var(--commonHeight);
   position:fixed;
@@ -20,10 +20,27 @@ text-align: center;
   border-bottom: 0.25vh solid yellow;
   border-top: 0.25vh solid yellow;
   border-radius: 20%;
+  color:white;
   vertical-align: middle;
   line-height: var(--cardHeight);
 }
 .cardName{
-  background-color: white;
-  min-width: 100vw;
+  background-color: rgb(123, 31, 162);
+  color:white;
+}
+.selCrdFieldEffect{
+      animation: mymove 2s;
+      -webkit-animation: mymove 2s; /* Safari 4.0 - 8.0 */
+}
+/* Standard syntax */
+@keyframes mymove {
+  from {background-color: rgb(123, 31, 162);}
+  90%{background-color: rgb(123, 31, 162)}
+  to {background-color: rgb(238, 39, 39);}
+}
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes mymove {
+  from {background-color: rgb(123, 31, 162);}
+  90%{background-color: rgb(123, 31, 162)}
+  to {background-color: rgb(238, 39, 39);}
 }

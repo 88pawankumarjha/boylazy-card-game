@@ -59,6 +59,16 @@ div#content{
 .overlay{
   box-shadow: inset 0px 0px 0 2000px rgba(0,0,0);
 }
+.overlayHigh{
+  box-shadow: inset 0px 0px 0 2000px rgba(0,0,0);
+  animation: highlgt 2s infinite;
+}
+@keyframes highlgt{
+ from {border: 4px solid rgb(123, 31, 162);}
+  30%{border: 2px solid rgb(238, 39, 39);}
+  60%{border: 2px solid rgb(238, 39, 39);}
+  to{border: 4px solid rgb(123, 31, 162);}
+}
 /* Create two equal columns that sits next to each other */
 .fullScreen{
   width:var(--commonWidth);

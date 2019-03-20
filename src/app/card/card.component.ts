@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { DataServiceService } from '../data-service.service';
+import { AppComponent } from '../app.component'
 
 @Component({
   selector: 'app-card',
@@ -11,7 +12,7 @@ export class CardComponent implements OnInit {
   @Input() card: Array<String>;
   myCard = [];
   otherCard = [];
-  constructor(private dataServiceService: DataServiceService){ 
+  constructor(private dataServiceService: DataServiceService, private appComponent: AppComponent){ 
     this.myCard = this.dataServiceService.myCard;
     this.otherCard = this.dataServiceService.otherCard;
   }

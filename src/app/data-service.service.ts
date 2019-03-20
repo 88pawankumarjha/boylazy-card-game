@@ -19,6 +19,9 @@ export class DataServiceService {
       data => {
         this.arrCards = data as string [];	 // FILL THE ARRAY WITH DATA.
         //  alert(this.arrCards[1].Name);
+        this.myCard1 = this.arrCards[0];
+        this.otherCard1 = this.arrCards[1];
+
       },
       (err: HttpErrorResponse) => {
         console.log (err.message);
@@ -37,10 +40,17 @@ export class DataServiceService {
   ngOnInit () {
   }
   fetchMyCard(){
-    this.myCard1 = this.arrCards[1];
+    this.myCard1 = this.arrCards[0];
   }
   fetchOtherCard(){
-    this.otherCard1 = this.arrCards[2];
+    this.otherCard1 = this.arrCards[1];
+  }
+  
+  getMyCard(){
+    return this.myCard1;
+  }
+  getOtherCard(){
+    return this.otherCard1;
   }
 
 }

@@ -1,5 +1,5 @@
 <div id="content-card">
-  <span class="cardName">{{cardNumber != 1?otherCard[0].split(":")[1]:myCard[0].split(":")[1]}}</span>
+  <span class="cardName"><b>{{cardNumber != 1?otherCard[0].split(":")[1]:myCard[0].split(":")[1]}}</b></span>
     <div class="row-card">
       <div (click)="appComponent.toggleOtherCard(1)" class="column-card">
         {{(cardNumber == 1?myCard[1]:otherCard[1]).split(":")[0]}} - {{(cardNumber == 1?myCard[1]:otherCard[1]).split(":")[1]}}

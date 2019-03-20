@@ -35,27 +35,27 @@ div#content{
   /* image source:  https://shop.wwe.com/wwe-superstars/#loaded_more=true */
 .column1 {
   border: 1px solid white;
-  /* background-color:#bbb; */
+  background-color:#bbb;
   flex: 50%;
   height: var(--commonHeight);
   /* background-image: url("https://shop.wwe.com/on/demandware.static/-/Sites-wwe-us-navigation/default/dwb8d1545f/images/superstar-thumb-300/RomanReignsNEW.jpg"); */
   /* Center and scale the image nicely */
-  /* background-position: center;
+  background-position: center;
   background-repeat: no-repeat;
-  background-size: contain; */
+  background-size: contain;
 }
-.column2 {
+/* .column2 {
   border: 1px solid white;
   position:relative;
   background-color:#aaa;
   flex: 50%;
   height: var(--commonHeight);
   background-image: url("https://shop.wwe.com/on/demandware.static/-/Sites-wwe-us-navigation/default/dw3d76ae1e/images/superstar-thumb-300/SamoaJoeNEW.jpg");
-  /* Center and scale the image nicely */
+  
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-}  
+}   */
 .overlay{
   box-shadow: inset 0px 0px 0 2000px rgba(0,0,0);
 }

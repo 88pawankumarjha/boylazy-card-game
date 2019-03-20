@@ -14,7 +14,7 @@
     </div>
     <div id="content">
       <div class="row">
-        <div class="column1" (click)="showCard()" [ngClass]="{'overlay': firstLoad}">
+        <div class="column1" [style.background-image]="'url(https://shop.wwe.com/on/demandware.static/-/Sites-wwe-us-navigation/default/dwb8d1545f/images/superstar-thumb-300/'+dataServiceService.myCard[0].split(':')[1]+'NEW.jpg)'" (click)="showCard()" [ngClass]="{'overlay': firstLoad}">
         </div>
         <div class="column2" [ngClass]="{'overlay': !showOtherCard}">
         </div>

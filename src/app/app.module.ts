@@ -13,10 +13,12 @@ MatToolbarModule,MatIconModule} from '@angular/material';
 import { CardComponent } from './card/card.component';
 import { DataServiceService } from './data-service.service';
 
+import { HttpClientModule } from '@angular/common/http';
+
 import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
-  imports:      [ ToastrModule.forRoot(), BrowserModule, 
+  imports:      [ HttpClientModule, ToastrModule.forRoot(), BrowserModule, 
   FormsModule,
   BrowserAnimationsModule,
   MatToolbarModule,

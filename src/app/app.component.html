@@ -10,8 +10,8 @@
 			<span>WWE Clash Of Cards</span>
     <span class="example-spacer"></span>
     <mat-icon class="example-icon" (click)="refreshApp();">refresh</mat-icon>
-    <mat-icon class="example-icon">help_outline</mat-icon>
-    <mat-icon class="example-icon">android</mat-icon>
+    <mat-icon class="example-icon"><a style="text-decoration: none;color:white;" href="mailto:admin@boylazy.com">help_outline</a></mat-icon>
+    <!-- <mat-icon class="example-icon">android</mat-icon> -->
   </mat-toolbar-row>
 </mat-toolbar>
   <div id="container">
@@ -21,7 +21,7 @@
     <div id="content">
       <div class="row">
         <div class="column1" [style.background-image]="'url('+dataServiceService.fetchMyCard()+')'" (click)="showCard()" [ngClass]="{'overlayHigh': firstLoad}">
-        <span class="score">{{myScore}}/{{dataServiceService.half_length}}</span></div>
+        <span class="score">{{myScore}}/{{dataServiceService.half_length}}</span><span *ngIf="myScore==0 && otherScore==0 && !firstLoad==false" class="hint">Click here to start!</span></div>
         
         <div class="columnLogo">
         </div>

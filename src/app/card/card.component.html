@@ -5,7 +5,7 @@
         {{(cardNumber == 1?appComponent.dataServiceService.myCard[1]:appComponent.dataServiceService.otherCard[1]).split(":")[0]}} - {{(cardNumber == 1?appComponent.dataServiceService.myCard[1]:appComponent.dataServiceService.otherCard[1]).split(":")[1]}}
       </div>
       <div (click)="appComponent.toggleOtherCard(2);appComponent.dataServiceService.setSelCardField(2)" class="column-card" [class.selCrdFieldEffect]="appComponent.dataServiceService.getSelCardField() == 2">
-        {{(cardNumber == 1?appComponent.dataServiceService.myCard[2]:appComponent.dataServiceService.otherCard[2]).split(":")[0]}} - {{(cardNumber == 1?appComponent.dataServiceService.myCard[2]:appComponent.dataServiceService.otherCard[2]).split(":")[1]}}
+        {{(cardNumber == 1?appComponent.dataServiceService.myCard[2]:appComponent.dataServiceService.otherCard[2]).split(":")[0]}} - {{heightConverter((cardNumber == 1?appComponent.dataServiceService.myCard[2]:appComponent.dataServiceService.otherCard[2]).split(":")[1])}}
       </div>
     </div>
     <div class="row-card">

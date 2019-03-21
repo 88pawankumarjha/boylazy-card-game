@@ -36,12 +36,14 @@ export class AppComponent  {
     if(this.dataServiceService.myArrCards.length == 0){
       
       if(this.myScore >= this.otherScore){
-        this.toastr.success('You have won the battle!!',this.myScore +' out of '+this.dataServiceService.half_length + ' matches',
-    {closeButton: true, timeOut: 10000, positionClass: 'toast-center-center' });
+        this.toastr.success('You have won the battle!! CLICK HERE to restart the battle.',this.myScore +' out of '+this.dataServiceService.half_length + ' matches.',
+    {closeButton: true, timeOut: 10000, positionClass: 'toast-center-center' }).onTap
+    .subscribe(() => this.refreshApp());
         return;
         }else{
-          this.toastr.error('You have lost the battle!!',this.myScore +' out of '+this.dataServiceService.half_length + ' matches',
-    {closeButton: true, timeOut: 10000, positionClass: 'toast-center-center' });
+          this.toastr.error('You have lost the battle!! CLICK HERE to restart the battle.',this.myScore +' out of '+this.dataServiceService.half_length + ' matches',
+    {closeButton: true, timeOut: 10000, positionClass: 'toast-center-center' }).onTap
+    .subscribe(() => this.refreshApp());
         return;
         }
       }

@@ -29,6 +29,10 @@ export class AppComponent  {
   }
 
   showCard(){
+    if(this.dataServiceService.myArrCards.length == 0){
+        alert("Game Over");
+        return;
+      }
     this.firstLoad=false;
     this.showOtherCard=false;
   }

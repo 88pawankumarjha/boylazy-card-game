@@ -14,6 +14,8 @@ export class DataServiceService {
   arrCards: string [];
   myCard1;
   otherCard1;
+  myArrCards;
+  otherArrCards;
   constructor (private httpService: HttpClient) { 
     this.httpService.get('./assets/cards.json').subscribe(
       data => {
@@ -21,7 +23,7 @@ export class DataServiceService {
         //  alert(this.arrCards[1].Name);
         this.myCard1 = this.arrCards[0];
         this.otherCard1 = this.arrCards[1];
-
+        this.shuffleAndDistributeCards();
       },
       (err: HttpErrorResponse) => {
         console.log (err.message);
@@ -32,6 +34,8 @@ export class DataServiceService {
     this.selCardField = index;
     setTimeout(() => {
       this.selCardField = 0;
+      this.myArrCards.splice(0,1);
+      this.otherArrCards.splice(0,1);
     }, 2000);
   }
   getSelCardField(){
@@ -40,10 +44,13 @@ export class DataServiceService {
   ngOnInit () {
   }
   fetchMyCard(){
-    this.myCard1 = this.arrCards[0];
+    this.myCard1 = this.myArrCards[0];
+    // alert(this.myArrCards.length);
+    return this.myCard1;
   }
   fetchOtherCard(){
-    this.otherCard1 = this.arrCards[1];
+    this.otherCard1 = this.otherArrCards[0];
+    return this.otherCard1;
   }
   
   getMyCard(){
@@ -52,5 +59,28 @@ export class DataServiceService {
   getOtherCard(){
     return this.otherCard1;
   }
+
+  shuffleAndDistributeCards(){
+    this.myArrCards = this.shuffle(this.arrCards);
+    var half_length = Math.ceil(this.myArrCards.length / 2);    
+    this.otherArrCards = this.myArrCards.splice(0,half_length);
+    // alert(this.otherArrCards[0].Name + " " +  this.myArrCards[0].Name);
+  }
+
+shuffle(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex;  
+  while (0 !== currentIndex) {
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+  return array;
+}
+
 
 }

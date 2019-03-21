@@ -19,13 +19,13 @@
     </div>
     <div id="content">
       <div class="row">
-        <div class="column1" [style.background-image]="'url('+dataServiceService.myCard1.URL+')'" (click)="showCard()" [ngClass]="{'overlayHigh': firstLoad}">
+        <div class="column1" [style.background-image]="'url('+dataServiceService.fetchMyCard().URL+')'" (click)="showCard()" [ngClass]="{'overlayHigh': firstLoad}">
         </div>
         
         <div class="column1">
         </div>
 
-        <div class="column1" [style.background-image]="'url('+dataServiceService.otherCard1.URL+')'" [ngClass]="{'overlay': !showOtherCard}">
+        <div class="column1" [style.background-image]="'url('+dataServiceService.fetchOtherCard().URL+')'" [ngClass]="{'overlay': !showOtherCard}">
         </div>
 
         

@@ -64,7 +64,6 @@ export class DataServiceService {
     this.myArrCards = this.shuffle(this.arrCards);
     var half_length = Math.ceil(this.myArrCards.length / 2);    
     this.otherArrCards = this.myArrCards.splice(0,half_length);
-    // alert(this.otherArrCards[0].Name + " " +  this.myArrCards[0].Name);
   }
 
 shuffle(array) {

@@ -3,10 +3,11 @@
                     <td>{{card.Name}}</td>
         </tr>
         {{dataServiceService.arrCards[1].Name}} -->
+        <div class="splashScreen">&nbsp;</div>
         <div class="fullScreen">
 	<mat-toolbar color="primary" class="headerToolbar">
 		<mat-toolbar-row>
-			<span>WWE Card Game</span>
+			<span>WWE Clash Of Cards</span>
     <span class="example-spacer"></span>
     <mat-icon class="example-icon">refresh</mat-icon>
     <mat-icon class="example-icon">help_outline</mat-icon>
@@ -22,7 +23,7 @@
         <div class="column1" [style.background-image]="'url('+dataServiceService.fetchMyCard().URL+')'" (click)="showCard()" [ngClass]="{'overlayHigh': firstLoad}">
         </div>
         
-        <div class="column1">
+        <div class="columnLogo">
         </div>
 
         <div class="column1" [style.background-image]="'url('+dataServiceService.fetchOtherCard().URL+')'" [ngClass]="{'overlay': !showOtherCard}">

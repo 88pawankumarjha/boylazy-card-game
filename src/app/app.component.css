@@ -44,6 +44,43 @@ div#content{
   background-repeat: no-repeat;
   background-size: contain;
 }
+.columnLogo {
+  border: 1px solid white;
+  background-color:#bbb;
+  flex: 50%;
+  height: var(--commonHeight);
+  background-image: url("https://shop.wwe.com/on/demandware.static/-/Library-Sites-WWESharedLibrary/default/dw5effaaaa/content-images/footer/footer-logo.png");
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.splashScreen{
+  background-image: url("https://shop.wwe.com/on/demandware.static/-/Library-Sites-WWESharedLibrary/default/dw75f2165b/content-images/home-page/Superstar-Banner_1380x375_12.15.16.jpg");
+  z-index: 2;
+  width:0;
+  height: 0;
+  background-color: rgb(123, 31, 162);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: fixed;  
+  opacity: 0;
+  animation: showHide 3s;
+}
+@keyframes showHide{
+ from {opacity: 1;
+  width:100vw;
+  height: 100vh;}
+  60%{opacity: 1;
+  width:100vw;
+  height: 100vh;}
+  to{opacity: 0;
+  width:100vw;
+  height: 100vh;}
+}
+
+/* https://shop.wwe.com/on/demandware.static/-/Library-Sites-WWESharedLibrary/default/dw5effaaaa/content-images/footer/footer-logo.png */
 /* .column2 {
   border: 1px solid white;
   position:relative;

@@ -1,5 +1,5 @@
 <div id="content-card">
-  <span class="cardName"><b>{{cardNumber != 1?dataServiceService.otherArrCards[0].Name:dataServiceService.myArrCards[0].Name}}</b></span>
+  <span class="cardName"><b>{{cardNumber != 1?dataServiceService.otherArrCards[0].Name:dataServiceService.myArrCards[0].Name}}</b></span> 
     <div class="row-card">
       <div (click)="appComponent.toggleOtherCard(1);appComponent.dataServiceService.setSelCardField(1)" class="column-card" [class.selCrdFieldEffect]="appComponent.dataServiceService.getSelCardField() == 1">
         {{(cardNumber == 1?appComponent.dataServiceService.myCard[1]:appComponent.dataServiceService.otherCard[1]).split(":")[0]}} - {{(cardNumber == 1?appComponent.dataServiceService.myCard[1]:appComponent.dataServiceService.otherCard[1]).split(":")[1]}}

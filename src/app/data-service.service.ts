@@ -16,13 +16,14 @@ export class DataServiceService {
   otherCard1;
   myArrCards;
   otherArrCards;
+  half_length:0;
   constructor (private httpService: HttpClient) { 
     this.httpService.get('./assets/cards.json').subscribe(
       data => {
         this.arrCards = data as string [];	 // FILL THE ARRAY WITH DATA.
         //  alert(this.arrCards[1].Name);
-        this.myCard1 = this.arrCards[0];
-        this.otherCard1 = this.arrCards[1];
+        // this.myCard1 = this.arrCards[0];
+        // this.otherCard1 = this.arrCards[1];
         this.shuffleAndDistributeCards();
       },
       (err: HttpErrorResponse) => {
@@ -44,13 +45,17 @@ export class DataServiceService {
   ngOnInit () {
   }
   fetchMyCard(){
-    this.myCard1 = this.myArrCards[0];
-    // alert(this.myArrCards.length);
-    return this.myCard1;
+    if(undefined != this.myArrCards &&this.myArrCards.length != 0 )
+    return this.myArrCards[0].URL;
+    else 
+    return "https://shop.wwe.com/on/demandware.static/-/Sites-wwe-us-navigation/default/dwb8d1545f/images/superstar-thumb-300/RomanReignsNEW.jpg";
+  
   }
   fetchOtherCard(){
-    this.otherCard1 = this.otherArrCards[0];
-    return this.otherCard1;
+    if(undefined != this.otherArrCards &&this.otherArrCards.length != 0)
+    return this.otherArrCards[0].URL;
+    else 
+    return "https://shop.wwe.com/on/demandware.static/-/Sites-wwe-us-navigation/default/dwb8d1545f/images/superstar-thumb-300/RomanReignsNEW.jpg"
   }
   
   getMyCard(){
@@ -62,8 +67,8 @@ export class DataServiceService {
 
   shuffleAndDistributeCards(){
     this.myArrCards = this.shuffle(this.arrCards);
-    var half_length = Math.ceil(this.myArrCards.length / 2);    
-    this.otherArrCards = this.myArrCards.splice(0,half_length);
+    this.half_length = Math.ceil(this.myArrCards.length / 2);    
+    this.otherArrCards = this.myArrCards.splice(0,this.half_length);
   }
 
 shuffle(array) {

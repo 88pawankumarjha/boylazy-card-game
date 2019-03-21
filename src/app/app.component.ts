@@ -10,6 +10,8 @@ import { ToastrService } from 'ngx-toastr';
 export class AppComponent  {
   
   theResult;
+  myScore=0;
+  otherScore=0;
   resultMessage;
   firstLoad=true;
   showOtherCard=false;
@@ -22,16 +24,26 @@ export class AppComponent  {
   showSuccess() {
     this.toastr.success(this.resultMessage, 'You\'re the winner!!',
     {timeOut: 2000, positionClass: 'toast-center-center' });
+    this.myScore++;
   }
   showError() {
     this.toastr.error(this.resultMessage, 'You lose.', {
     timeOut: 2000, positionClass: 'toast-center-center' })
+    this.otherScore++;
   }
-
+// +" out of "+dataServiceService.half_length + " matches"
   showCard(){
     if(this.dataServiceService.myArrCards.length == 0){
-        alert("Game Over");
+      
+      if(this.myScore >= this.otherScore){
+        this.toastr.success('You have won the battle!!',this.myScore +' out of '+this.dataServiceService.half_length + ' matches',
+    {closeButton: true, timeOut: 10000, positionClass: 'toast-center-center' });
         return;
+        }else{
+          this.toastr.error('You have lost the battle!!',this.myScore +' out of '+this.dataServiceService.half_length + ' matches',
+    {closeButton: true, timeOut: 10000, positionClass: 'toast-center-center' });
+        return;
+        }
       }
     this.firstLoad=false;
     this.showOtherCard=false;
@@ -58,7 +70,7 @@ export class AppComponent  {
             this.announceResult(2, myCardLabel, myCardValue, otherCardValue):
             this.announceResult(1, myCardLabel, myCardValue, otherCardValue)
         }
-    }, 1000);
+    }, 200);
 
     setTimeout(() => {
       this.hideCard();
@@ -76,5 +88,9 @@ export class AppComponent  {
       this.resultMessage = label+ " " + v1+ " LOST " + label+ " " + v2;
       this.showError();
     }
+  }
+
+  refreshApp(){
+    location.reload();
   }
 }

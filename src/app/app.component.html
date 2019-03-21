@@ -9,7 +9,7 @@
 		<mat-toolbar-row>
 			<span>WWE Clash Of Cards</span>
     <span class="example-spacer"></span>
-    <mat-icon class="example-icon">refresh</mat-icon>
+    <mat-icon class="example-icon" (click)="refreshApp();">refresh</mat-icon>
     <mat-icon class="example-icon">help_outline</mat-icon>
     <mat-icon class="example-icon">android</mat-icon>
   </mat-toolbar-row>
@@ -20,13 +20,13 @@
     </div>
     <div id="content">
       <div class="row">
-        <div class="column1" [style.background-image]="'url('+dataServiceService.fetchMyCard().URL+')'" (click)="showCard()" [ngClass]="{'overlayHigh': firstLoad}">
-        </div>
+        <div class="column1" [style.background-image]="'url('+dataServiceService.fetchMyCard()+')'" (click)="showCard()" [ngClass]="{'overlayHigh': firstLoad}">
+        <span class="score">{{myScore}}/{{dataServiceService.half_length}}</span></div>
         
         <div class="columnLogo">
         </div>
 
-        <div class="column1" [style.background-image]="'url('+dataServiceService.fetchOtherCard().URL+')'" [ngClass]="{'overlay': !showOtherCard}">
+        <div class="column1" [style.background-image]="'url('+dataServiceService.fetchOtherCard()+')'" [ngClass]="{'overlay': !showOtherCard}"><span class="score">{{otherScore}}/{{dataServiceService.half_length}}</span>
         </div>        
       </div>
     </div>

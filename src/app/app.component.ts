@@ -41,7 +41,7 @@ export class AppComponent  {
     .subscribe(() => this.refreshApp());
         return;
         }else{
-          this.toastr.info(this.myScore +' out of '+this.dataServiceService.half_length + ' fights lost.','You have lost the battle!! CLICK HERE to restart the battle.',
+          this.toastr.warning(this.myScore +' out of '+this.dataServiceService.half_length + ' fights lost.','You have lost the battle!! CLICK HERE to restart the battle.',
     {closeButton: true, timeOut: 10000, positionClass: 'toast-center-center' }).onTap
     .subscribe(() => this.refreshApp());
         return;

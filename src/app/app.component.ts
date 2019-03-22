@@ -33,8 +33,8 @@ export class AppComponent  {
   }
 // +" out of "+dataServiceService.half_length + " matches"
   showCard(){
-    if(this.dataServiceService.myArrCards.length == 0){
-      
+    // alert(this.dataServiceService.myArrCards.length+" " +this.myScore + " : " + this.dataServiceService.half_length);
+    if(this.dataServiceService.myArrCards.length == 0){      
       if(this.myScore >= this.otherScore){
         this.toastr.success('You have won the battle!! CLICK HERE to restart the battle.',this.myScore +' out of '+this.dataServiceService.half_length + ' matches.',
     {closeButton: true, timeOut: 10000, positionClass: 'toast-center-center' }).onTap
@@ -47,6 +47,7 @@ export class AppComponent  {
         return;
         }
       }
+
     this.firstLoad=false;
     this.showOtherCard=false;
   }
@@ -56,10 +57,28 @@ export class AppComponent  {
   }
 
   toggleOtherCard(index){
-    
-    const myCardLabel = this.dataServiceService.myCard[index].split(":")[0];
-    const myCardValue = this.dataServiceService.myCard[index].split(":")[1];
-    const otherCardValue = this.dataServiceService.otherCard[index].split(":")[1];
+    let myCardLabel = "";
+    switch (index) {
+    case 1:
+        myCardLabel="Rank"
+        break;
+    case 2:
+        myCardLabel="Height"
+        break;
+    case 3:
+        myCardLabel="Weight"
+        break;
+    case 4:
+        myCardLabel="WinPercentage"
+        break;
+    default:
+        myCardLabel="Rank"
+        break;
+    }
+    const myStr = "this.dataServiceService.myArrCards[0]."+myCardLabel;
+    const otherStr = "this.dataServiceService.otherArrCards[0]."+myCardLabel;
+    const myCardValue = eval(myStr);
+    const otherCardValue = eval(otherStr);
 
     this.showOtherCard=true;
     setTimeout(() => {

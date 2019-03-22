@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { DataServiceService } from './data-service.service';
 import { ToastrService } from 'ngx-toastr';
-
+ 
 @Component({
   selector: 'my-app',
   templateUrl: './app.component.html',

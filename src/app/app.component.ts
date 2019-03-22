@@ -3,7 +3,7 @@ import { DataServiceService } from './data-service.service';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
-  selector: 'my-app',
+  selector: 'sg-my-app',
   templateUrl: './app.component.html',
   styleUrls: [ './app.component.css' ]
 })

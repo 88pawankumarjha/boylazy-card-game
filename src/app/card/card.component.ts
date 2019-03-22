@@ -3,7 +3,7 @@ import { DataServiceService } from '../data-service.service';
 import { AppComponent } from '../app.component'
 
 @Component({
-  selector: 'app-card',
+  selector: 'sg-app-card',
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.css']
 })

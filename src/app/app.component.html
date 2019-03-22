@@ -16,7 +16,7 @@
 </mat-toolbar>
   <div id="container">
     <div *ngIf="undefined !=dataServiceService.otherArrCards" [hidden]="!showOtherCard" id="header">
-      <app-card cardNumber="2" card={{dataServiceService.otherArrCards[0]}}></app-card>
+      <sg-app-card cardNumber="2" card={{dataServiceService.otherArrCards[0]}}></sg-app-card>
     </div>
     <div id="content">
       <div class="row">
@@ -31,7 +31,7 @@
       </div>
     </div>
     <div *ngIf="undefined !=dataServiceService.myArrCards" [hidden]="firstLoad" id="footer">
-      <app-card cardNumber="1" card={{dataServiceService.myArrCards[0]}}></app-card>
+      <sg-app-card cardNumber="1" card={{dataServiceService.myArrCards[0]}}></sg-app-card>
     </div>
   </div>
 </div>

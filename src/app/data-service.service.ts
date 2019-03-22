@@ -42,8 +42,7 @@ export class DataServiceService {
   getSelCardField(){
     return this.selCardField;
   }
-  ngOnInit () {
-  }
+  
   fetchMyCard(){
     if(undefined != this.myArrCards &&this.myArrCards.length != 0 )
     return this.myArrCards[0].URL;

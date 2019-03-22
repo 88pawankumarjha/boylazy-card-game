@@ -9,13 +9,14 @@ import { AppComponent } from '../app.component'
 })
 export class CardComponent implements OnInit {
   @Input() cardNumber: string;
-  @Input() card: Array<String>;
+  @Input() card: string [];
   myCard = [];
   otherCard = [];
-  
+
   constructor(private dataServiceService: DataServiceService, private appComponent: AppComponent){ 
     // this.myCard = this.dataServiceService.myCard;
     this.otherCard = this.dataServiceService.otherCard;
+
   }
   getKeys(map){
       return Array.from(map.keys());

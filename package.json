@@ -13,6 +13,7 @@
     "@angular/platform-browser": "7.2.5",
     "@angular/platform-browser-dynamic": "7.2.5",
     "@angular/router": "7.2.5",
+    "@types/node": "^11.11.5",
     "core-js": "2.6.5",
     "igniteui-angular": "^7.2.1",
     "ngx-toastr": "^10.0.2",

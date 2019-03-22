@@ -36,13 +36,13 @@ export class AppComponent  {
   checkResult(){
     if(this.myScore + this.otherScore == this.dataServiceService.half_length){
       if(this.myScore >= this.otherScore){
-        this.toastr.success(this.myScore +' out of '+this.dataServiceService.half_length + ' matches won.','You have won the battle!! CLICK HERE to restart the battle.',
+        this.toastr.success(this.myScore +' out of '+this.dataServiceService.half_length + ' fights won.','You have won the battle!! CLICK HERE to restart the battle.',
     {closeButton: true, timeOut: 10000, positionClass: 'toast-center-center' }).onTap
     .subscribe(() => this.refreshApp());
         return;
         }else{
           alert("done4");
-          this.toastr.error(this.myScore +' out of '+this.dataServiceService.half_length + ' matches lost.','You have lost the battle!! CLICK HERE to restart the battle.',
+          this.toastr.error(this.myScore +' out of '+this.dataServiceService.half_length + ' fights lost.','You have lost the battle!! CLICK HERE to restart the battle.',
     {closeButton: true, timeOut: 10000, positionClass: 'toast-center-center' }).onTap
     .subscribe(() => this.refreshApp());
         return;
@@ -106,11 +106,11 @@ export class AppComponent  {
   announceResult(number, label, v1, v2){
     if(number==1){
       this.theResult=0;
-      this.resultMessage = label+ " " + v1+ " WIN " + label+ " " +v2;
+      this.resultMessage = "Your "+label+ " is better.";
       this.showSuccess();
     }else{
       this.theResult=1
-      this.resultMessage = label+ " " + v1+ " LOST " + label+ " " + v2;
+      this.resultMessage = "Your "+label+ " was not good enough.";
       this.showError();
     }
   }

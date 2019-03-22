@@ -5,7 +5,7 @@
     "Height":"190",
     "Weight":"264",
     "WinPercentage":"72.3",
-    "URL":"https://shop.wwe.com/on/demandware.static/-/Sites-wwe-us-navigation/default/dwb8d1545f/images/superstar-thumb-300/RomanReignsNEW.jpg"
+    "URL":"https://raw.githubusercontent.com/88pawankumarjha/wwe-cards/d052b0a301a5ce492b933073180f0051cbd5bba2/src/assets/images/RomanReignsNEW.jpg"
   },
   {
     "Name":"John Cena",
@@ -13,7 +13,7 @@
     "Height":"185",
     "Weight":"251",
     "WinPercentage":"78.6",
-    "URL":"https://shop.wwe.com/on/demandware.static/-/Sites-wwe-us-navigation/default/dwb8d1545f/images/superstar-thumb-300/john-cena_th.jpg"
+    "URL":"https://raw.githubusercontent.com/88pawankumarjha/wwe-cards/d052b0a301a5ce492b933073180f0051cbd5bba2/src/assets/images/john-cena_th.jpg"
   },
   {
     "Name":"Seth Rollins",
@@ -21,7 +21,7 @@
     "Height":"187",
     "Weight":"205",
     "WinPercentage":"50.2",
-    "URL":"https://shop.wwe.com/on/demandware.static/-/Sites-wwe-us-navigation/default/dwb8d1545f/images/superstar-thumb-300/seth-rollins.jpg"
+    "URL":"https://raw.githubusercontent.com/88pawankumarjha/wwe-cards/d052b0a301a5ce492b933073180f0051cbd5bba2/src/assets/images/seth-rollins.jpg"
   },
   {
     "Name":"The Undertaker",
@@ -29,7 +29,7 @@
     "Height":"208",
     "Weight":"299",
     "WinPercentage":"75.0",
-    "URL":"https://shop.wwe.com/on/demandware.static/-/Sites-wwe-us-navigation/default/dwb8d1545f/images/superstar-thumb-300/undertaker.jpg"
+    "URL":"https://raw.githubusercontent.com/88pawankumarjha/wwe-cards/d052b0a301a5ce492b933073180f0051cbd5bba2/src/assets/images/undertaker.jpg"
   },
   {
     "Name":"Triple H",
@@ -37,7 +37,7 @@
     "Height":"193",
     "Weight":"255",
     "WinPercentage":"51.8",
-    "URL":"https://shop.wwe.com/on/demandware.static/-/Sites-wwe-us-navigation/default/dwb8d1545f/images/superstar-thumb-300/TripleHNEW.jpg"
+    "URL":"https://raw.githubusercontent.com/88pawankumarjha/wwe-cards/d052b0a301a5ce492b933073180f0051cbd5bba2/src/assets/images/TripleHNEW.jpg"
   },
   {
     "Name":"Hulk Hogan",
@@ -45,7 +45,7 @@
     "Height":"193",
     "Weight":"275",
     "WinPercentage":"74.9",
-    "URL":"https://shop.wwe.com/on/demandware.static/-/Sites-wwe-us-navigation/default/dwb8d1545f/images/superstar-thumb-300/thumb_hulkHogan.jpg"
+    "URL":"https://raw.githubusercontent.com/88pawankumarjha/wwe-cards/d052b0a301a5ce492b933073180f0051cbd5bba2/src/assets/images/thumb_hulkHogan.jpg"
   },
   {
     "Name":"The Rock",
@@ -53,7 +53,7 @@
     "Height":"193",
     "Weight":"264",
     "WinPercentage":"52.9",
-    "URL":"https://shop.wwe.com/on/demandware.static/-/Sites-wwe-us-navigation/default/dwb8d1545f/images/superstar-thumb-300/the-rock.jpg"
+    "URL":"https://raw.githubusercontent.com/88pawankumarjha/wwe-cards/d052b0a301a5ce492b933073180f0051cbd5bba2/src/assets/images/the-rock.jpg"
   },
   {
     "Name":"Stone Cold Steve Austin",
@@ -61,7 +61,7 @@
     "Height":"188",
     "Weight":"255",
     "WinPercentage":"56.9",
-    "URL":"https://shop.wwe.com/on/demandware.static/-/Sites-wwe-us-navigation/default/dwb8d1545f/images/superstar-thumb-300/stone-cold-steve-austin.jpg"
+    "URL":"https://raw.githubusercontent.com/88pawankumarjha/wwe-cards/d052b0a301a5ce492b933073180f0051cbd5bba2/src/assets/images/stone-cold-steve-austin.jpg"
   },
   {
     "Name":"Sasha Banks",
@@ -69,7 +69,7 @@
     "Height":"164",
     "Weight":"114",
     "WinPercentage":"58.4",
-    "URL":"https://shop.wwe.com/on/demandware.static/-/Sites-wwe-us-navigation/default/dwb8d1545f/images/superstar-thumb-300/sasha-banks_th.jpg"
+    "URL":"https://raw.githubusercontent.com/88pawankumarjha/wwe-cards/d052b0a301a5ce492b933073180f0051cbd5bba2/src/assets/images/sasha-banks_th.jpg"
   },
   {
     "Name":"Ronda Rousey",
@@ -77,7 +77,7 @@
     "Height":"170",
     "Weight":"134",
     "WinPercentage":"98.4",
-    "URL":"https://shop.wwe.com/on/demandware.static/-/Sites-wwe-us-navigation/default/dwb8d1545f/images/superstar-thumb-300/ronda-rousey_th.jpg"
+    "URL":"https://raw.githubusercontent.com/88pawankumarjha/wwe-cards/d052b0a301a5ce492b933073180f0051cbd5bba2/src/assets/images/ronda-rousey_th.jpg"
   },
   {
     "Name":"Charlotte Flair",
@@ -85,7 +85,7 @@
     "Height":"178",
     "Weight":"143",
     "WinPercentage":"58.8",
-    "URL":"https://shop.wwe.com/on/demandware.static/-/Sites-wwe-us-navigation/default/dwb8d1545f/images/superstar-thumb-300/charlotte_th.jpg"
+    "URL":"https://raw.githubusercontent.com/88pawankumarjha/wwe-cards/d052b0a301a5ce492b933073180f0051cbd5bba2/src/assets/images/charlotte_th.jpg"
   },
   {
     "Name":"Brock Lesnar",
@@ -93,7 +93,7 @@
     "Height":"193",
     "Weight":"266",
     "WinPercentage":"73.1",
-    "URL":"https://shop.wwe.com/on/demandware.static/-/Sites-wwe-us-navigation/default/dwb8d1545f/images/superstar-thumb-300/brock-lesnar.jpg"
+    "URL":"https://raw.githubusercontent.com/88pawankumarjha/wwe-cards/d052b0a301a5ce492b933073180f0051cbd5bba2/src/assets/images/brock-lesnar.jpg"
   },
   {
     "Name":"Big Show",
@@ -101,7 +101,7 @@
     "Height":"213",
     "Weight":"396",
     "WinPercentage":"56.1",
-    "URL":"https://shop.wwe.com/on/demandware.static/-/Sites-wwe-us-navigation/default/dwb8d1545f/images/superstar-thumb-300/BigShowNEW.jpg"
+    "URL":"https://raw.githubusercontent.com/88pawankumarjha/wwe-cards/d052b0a301a5ce492b933073180f0051cbd5bba2/src/assets/images/BigShowNEW.jpg"
   },
   {
     "Name":"Bray Wyatt",
@@ -109,7 +109,7 @@
     "Height":"190",
     "Weight":"299",
     "WinPercentage":"35.2",
-    "URL":"https://shop.wwe.com/on/demandware.static/-/Sites-wwe-us-navigation/default/dwb8d1545f/images/superstar-thumb-300/BrayWyattNEW.jpg"
+    "URL":"https://raw.githubusercontent.com/88pawankumarjha/wwe-cards/d052b0a301a5ce492b933073180f0051cbd5bba2/src/assets/images/BrayWyattNEW.jpg"
   },
   {
     "Name":"Bret Hart Hitman",
@@ -117,7 +117,7 @@
     "Height":"183",
     "Weight":"235",
     "WinPercentage":"64.4",
-    "URL":"https://shop.wwe.com/on/demandware.static/-/Sites-wwe-us-navigation/default/dwb8d1545f/images/superstar-thumb-300/bret-hart.jpg"
+    "URL":"https://raw.githubusercontent.com/88pawankumarjha/wwe-cards/d052b0a301a5ce492b933073180f0051cbd5bba2/src/assets/images/bret-hart.jpg"
   },
   {
     "Name":"Becky Lynch",

@@ -8,7 +8,7 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: [ './app.component.css' ]
 })
 export class AppComponent  {
-  
+
   theResult;
   myScore=0;
   otherScore=0;

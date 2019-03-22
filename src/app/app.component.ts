@@ -22,31 +22,35 @@ export class AppComponent  {
   }
 
   showSuccess() {
+    this.myScore++;
     this.toastr.success(this.resultMessage, 'You\'re the winner!!',
     {timeOut: 2000, positionClass: 'toast-center-center' });
-    this.myScore++;
+    this.checkResult();
   }
   showError() {
-    this.toastr.error(this.resultMessage, 'You lose.', {
-    timeOut: 2000, positionClass: 'toast-center-center' })
     this.otherScore++;
+    this.toastr.error(this.resultMessage, 'You lose.', {
+    timeOut: 2000, positionClass: 'toast-center-center' });
+    this.checkResult();
   }
-// +" out of "+dataServiceService.half_length + " matches"
-  showCard(){
-    // alert(this.dataServiceService.myArrCards.length+" " +this.myScore + " : " + this.dataServiceService.half_length);
-    if(this.dataServiceService.myArrCards.length == 0){      
+  checkResult(){
+    if(this.myScore + this.otherScore == this.dataServiceService.half_length){
       if(this.myScore >= this.otherScore){
-        this.toastr.success('You have won the battle!! CLICK HERE to restart the battle.',this.myScore +' out of '+this.dataServiceService.half_length + ' matches.',
+        this.toastr.success(this.myScore +' out of '+this.dataServiceService.half_length + ' matches won.','You have won the battle!! CLICK HERE to restart the battle.',
     {closeButton: true, timeOut: 10000, positionClass: 'toast-center-center' }).onTap
     .subscribe(() => this.refreshApp());
         return;
         }else{
-          this.toastr.error('You have lost the battle!! CLICK HERE to restart the battle.',this.myScore +' out of '+this.dataServiceService.half_length + ' matches',
+          alert("done4");
+          this.toastr.error(this.myScore +' out of '+this.dataServiceService.half_length + ' matches lost.','You have lost the battle!! CLICK HERE to restart the battle.',
     {closeButton: true, timeOut: 10000, positionClass: 'toast-center-center' }).onTap
     .subscribe(() => this.refreshApp());
         return;
         }
       }
+  }
+  showCard(){
+    this.checkResult();
 
     this.firstLoad=false;
     this.showOtherCard=false;

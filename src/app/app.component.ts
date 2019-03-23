@@ -102,7 +102,7 @@ export class AppComponent  {
         myCardLabel="Weight"
         break;
     case 4:
-        myCardLabel="WinPercentage"
+        myCardLabel="WinPercent"
         break;
     default:
         myCardLabel="Rank"

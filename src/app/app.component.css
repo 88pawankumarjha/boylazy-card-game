@@ -173,7 +173,7 @@ background: linear-gradient(to bottom, var(--headerColor), #6f0000); /* W3C, IE 
 }
 @media screen and (orientation:portrait) {
   *{
-    font-size: 3.5vh;
+    font-size: 4.5vw;
   }
 }
 @media screen and (orientation:landscape) {

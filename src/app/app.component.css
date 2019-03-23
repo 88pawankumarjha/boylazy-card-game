@@ -139,7 +139,7 @@ div#footer{
   to{opacity: 0;width:100vw;height: 100vh;}
 }
 .example-start-icon{
-  padding:5vw;
+  margin-left:42%;
 }
 .gameProgress{
   display:flex;
@@ -168,4 +168,11 @@ div#footer{
 @media screen and (orientation:portrait) {
 }
 @media screen and (orientation:landscape) {
+  
+  /* Maximum height */
+  @media (max-height: 40rem) {
+    .headerToolbar{
+    zoom:0.5;
+  }
+  }
 }

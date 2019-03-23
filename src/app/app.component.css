@@ -17,6 +17,7 @@
 }
 .headerToolbar{
   min-height: var(--headerToolbarHeight);
+  font-weight: bolder;
 }
 /* nav bar end */
 

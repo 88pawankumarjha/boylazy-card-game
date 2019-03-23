@@ -18,7 +18,7 @@
         Weight: {{cardNumber != 1?dataServiceService.otherArrCards[0].Weight:dataServiceService.myArrCards[0].Weight}} lbs
       </div>
       <div (click)="appComponent.toggleOtherCard(4);appComponent.dataServiceService.setSelCardField(4)" class="column-card" [class.selCrdFieldEffect]="appComponent.dataServiceService.getSelCardField() == 4">
-        Win Percent: {{cardNumber != 1?dataServiceService.otherArrCards[0].WinPercent:dataServiceService.myArrCards[0].WinPercent}}%
+        Win%: {{cardNumber != 1?dataServiceService.otherArrCards[0].WinPercent:dataServiceService.myArrCards[0].WinPercent}}%
       </div>
     </div>
 </div>

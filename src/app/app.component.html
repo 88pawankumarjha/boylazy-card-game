@@ -12,7 +12,7 @@
     <span class="example-spacer"></span>
     <mat-icon class="example-icon" (click)="resetApp();">refresh</mat-icon>
     <mat-icon class="example-icon"><a style="text-decoration: none;color:white;" href="mailto:admin@boylazy.com">feedback</a></mat-icon>
-    <!-- <mat-icon class="example-icon">android</mat-icon> -->
+    <!-- <mat-icon class="example-icon">touch_app</mat-icon> -->
   </mat-toolbar-row>
 </mat-toolbar>
   <div id="container">
@@ -20,10 +20,25 @@
       <sg-app-card cardNumber="2" card={{dataServiceService.otherArrCards[0]}}></sg-app-card>
     </div>
     <div id="content">
+      
+      <div class="gameProgress">
+        <mat-progress-bar class="halfWidth" color="accent" mode="determinate" [value]="(((myScore)/dataServiceService.half_length)*100)"></mat-progress-bar>
+        <mat-progress-bar  class="halfWidth" color="warn" mode="determinate" [value]="((otherScore)/dataServiceService.half_length)*100"></mat-progress-bar>
+      </div>
+      <div class="gameProgress">
+        <mat-progress-bar class="halfWidth" color="accent" mode="determinate" [value]="(((myScore)/dataServiceService.half_length)*100)"></mat-progress-bar>
+        <mat-progress-bar  class="halfWidth" color="warn" mode="determinate" [value]="((otherScore)/dataServiceService.half_length)*100"></mat-progress-bar>
+      </div>
+
       <div class="row">
         <div class="column1" [style.background-image]="'url('+dataServiceService.fetchMyCard()+')'" (click)="showCard()" [ngClass]="{'overlayHigh': firstLoad}">
-        <span class="score">{{myScore}}/{{dataServiceService.half_length}}</span><span *ngIf="myScore==0 && otherScore==0 && !firstLoad==false" class="hint">Click here to start!</span></div>
-        
+        <span class="score">{{myScore}}/{{dataServiceService.half_length}}</span>
+        <span *ngIf="myScore==0 && otherScore==0 && !firstLoad==false" class="hint">
+          Click here to start!
+            <mat-toolbar-row>
+              <mat-icon class="example-start-icon">touch_app</mat-icon>
+            </mat-toolbar-row>
+        </span></div>
         <div class="columnLogo">
         </div>
 

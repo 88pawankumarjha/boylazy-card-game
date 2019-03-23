@@ -138,6 +138,15 @@ div#footer{
   60%{opacity: 0.3;width:100vw;height: 100vh;}
   to{opacity: 0;width:100vw;height: 100vh;}
 }
+.example-start-icon{
+  padding:5vw;
+}
+.gameProgress{
+  display:flex;
+}
+.halfWidth{
+  width:50vw;
+}
 .splashScreen{
   background-image: url("https://shop.wwe.com/on/demandware.static/-/Library-Sites-WWESharedLibrary/default/dw75f2165b/content-images/home-page/Superstar-Banner_1380x375_12.15.16.jpg");
   z-index: 2;

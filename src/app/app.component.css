@@ -86,7 +86,7 @@ div#header{
   width:var(--commonWidth);
   height:var(--commonHeight);
   position:fixed;
-  z-index:100;
+  z-index:4;
   background-color:rgb(226, 27, 36);
   /* display:none; */
 }
@@ -121,7 +121,23 @@ div#footer{
   /* border: 1px solid var(--headerColor); */
   /* border-radius: 8%; */
 }
-
+.overlayScreen{
+  z-index: 6;
+  width:0;
+  height: 0;
+  background-color: white;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: fixed;
+  opacity: 0;
+  animation: showOverlayHide 2s;
+}
+@keyframes showOverlayHide{
+ from {opacity: 0.2;width:100vw;height: 100vh;}
+  60%{opacity: 0.3;width:100vw;height: 100vh;}
+  to{opacity: 0;width:100vw;height: 100vh;}
+}
 .splashScreen{
   background-image: url("https://shop.wwe.com/on/demandware.static/-/Library-Sites-WWESharedLibrary/default/dw75f2165b/content-images/home-page/Superstar-Banner_1380x375_12.15.16.jpg");
   z-index: 2;

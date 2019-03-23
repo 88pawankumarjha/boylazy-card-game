@@ -10,6 +10,7 @@ import { ToastrService } from 'ngx-toastr';
 export class AppComponent  {
 
   theResult;
+  showOverlay=false;
   myScore=0;
   otherScore=0;
   resultMessage;
@@ -21,45 +22,73 @@ export class AppComponent  {
     
   }
 
+  resetApp(){
+    this.theResult=-1;
+    this.showOverlay=false;
+    this.myScore=0;
+    this.otherScore=0;
+    this.resultMessage="";
+    this.firstLoad=true;
+    this.showOtherCard=false;
+    this.myCard;
+    this.otherCard;
+    this.dataServiceService.initApp();
+  }
+
   showSuccess() {
     this.myScore++;
     this.toastr.success(this.resultMessage, 'You\'re the winner!!',
-    {timeOut: 2000, positionClass: 'toast-center-center' });
-    this.checkResult();
+    {timeOut: 2000, positionClass: 'toast-bottom-center' });
+    
+    setTimeout(() => {
+      this.checkResult()
+    }, 2000);
   }
   showError() {
     this.otherScore++;
     this.toastr.error(this.resultMessage, 'You lose.', {
-    timeOut: 2000, positionClass: 'toast-center-center' });
-    this.checkResult();
+    timeOut: 2000, positionClass: 'toast-bottom-center' });
+    
+    setTimeout(() => {
+      this.checkResult()
+    }, 2000);
   }
   checkResult(){
     if(this.myScore + this.otherScore == this.dataServiceService.half_length){
       if(this.myScore >= this.otherScore){
         this.toastr.info(this.myScore +' out of '+this.dataServiceService.half_length + ' fights won.','You have won the battle!! CLICK HERE to restart the battle.',
     {closeButton: true, timeOut: 10000, positionClass: 'toast-center-center' }).onTap
-    .subscribe(() => this.refreshApp());
-        return;
+    .subscribe(() => this.resetApp());
+        return true;
         }else{
           this.toastr.warning(this.myScore +' out of '+this.dataServiceService.half_length + ' fights lost.','You have lost the battle!! CLICK HERE to restart the battle.',
     {closeButton: true, timeOut: 10000, positionClass: 'toast-center-center' }).onTap
-    .subscribe(() => this.refreshApp());
-        return;
+    .subscribe(() => this.resetApp());
+        return true;
         }
       }
   }
   showCard(){
-    this.checkResult();
-
-    this.firstLoad=false;
-    this.showOtherCard=false;
+    if(!this.checkResult()){
+      this.firstLoad=false;
+      this.showOtherCard=false;
+    }
   }
   hideCard(){
     this.firstLoad=true;
     this.showOtherCard=false;
   }
 
+  stopDoubleClick(){
+    this.showOverlay = true;
+    setTimeout(() => {
+      this.showOverlay = false;
+    }, 2000);
+  }
+
   toggleOtherCard(index){
+    // stop double click
+    this.stopDoubleClick();
     let myCardLabel = "";
     switch (index) {
     case 1:

@@ -18,12 +18,12 @@ export class DataServiceService {
   otherArrCards;
   half_length:0;
   constructor (private httpService: HttpClient) { 
+    this.initApp();
+  }
+  initApp(){
     this.httpService.get('./assets/cards.json').subscribe(
       data => {
-        this.arrCards = data as string [];	 // FILL THE ARRAY WITH DATA.
-        //  alert(this.arrCards[1].Name);
-        // this.myCard1 = this.arrCards[0];
-        // this.otherCard1 = this.arrCards[1];
+        this.arrCards = data as string [];
         this.shuffleAndDistributeCards();
       },
       (err: HttpErrorResponse) => {
@@ -47,8 +47,7 @@ export class DataServiceService {
     if(undefined != this.myArrCards &&this.myArrCards.length != 0 )
     return this.myArrCards[0].URL;
     else 
-    return "https://shop.wwe.com/on/demandware.static/-/Sites-wwe-us-navigation/default/dwb8d1545f/images/superstar-thumb-300/RomanReignsNEW.jpg";
-  
+    return "#";
   }
   fetchOtherCard(){
     if(undefined != this.otherArrCards &&this.otherArrCards.length != 0)

@@ -3,14 +3,15 @@
                     <td>{{card.Name}}</td>
         </tr>
         {{dataServiceService.arrCards[1].Name}} -->
-<div class="splashScreen">&nbsp;</div>
+<div class="splashScreen"></div>
+<div *ngIf="showOverlay" class="overlayScreen"></div>
 <div class="fullScreen">
 	<mat-toolbar color="primary" class="headerToolbar">
 		<mat-toolbar-row>
 			<span>WWE Clash Of Cards</span>
     <span class="example-spacer"></span>
-    <mat-icon class="example-icon" (click)="refreshApp();">refresh</mat-icon>
-    <mat-icon class="example-icon"><a style="text-decoration: none;color:white;" href="mailto:admin@boylazy.com">help_outline</a></mat-icon>
+    <mat-icon class="example-icon" (click)="resetApp();">refresh</mat-icon>
+    <mat-icon class="example-icon"><a style="text-decoration: none;color:white;" href="mailto:admin@boylazy.com">feedback</a></mat-icon>
     <!-- <mat-icon class="example-icon">android</mat-icon> -->
   </mat-toolbar-row>
 </mat-toolbar>

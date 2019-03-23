@@ -16,6 +16,7 @@ import { DataServiceService } from './data-service.service';
 import { HttpClientModule } from '@angular/common/http';
 
 import { ToastrModule } from 'ngx-toastr';
+import { GameProgressComponent } from './game-progress/game-progress.component';
 
 @NgModule({
   imports:      [ HttpClientModule, ToastrModule.forRoot(), BrowserModule, 
@@ -27,7 +28,7 @@ import { ToastrModule } from 'ngx-toastr';
   MatButtonModule,
   MatCheckboxModule,
   MatIconModule ],
-  declarations: [ AppComponent, HelloComponent, CardComponent ],
+  declarations: [ AppComponent, HelloComponent, CardComponent, GameProgressComponent ],
   bootstrap:    [ AppComponent ],
   providers: [DataServiceService]
 })

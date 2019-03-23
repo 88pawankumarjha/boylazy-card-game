@@ -18,8 +18,9 @@ export class AppComponent  {
   showOtherCard=false;
   myCard;
   otherCard;
-  constructor(private dataServiceService: DataServiceService, private toastr: ToastrService){
-    
+  dataServiceService;
+  constructor(private dataServiceServiceInstance: DataServiceService, private toastr: ToastrService){
+    this.dataServiceService = dataServiceServiceInstance;
   }
 
   resetApp(){

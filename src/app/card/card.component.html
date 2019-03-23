@@ -1,5 +1,5 @@
-<div *ngIf="undefined !=dataServiceService.myArrCards[0]" id="content-card">
-  <span class="cardName"><b>{{cardNumber != 1?dataServiceService.otherArrCards[0].Name:dataServiceService.myArrCards[0].Name}}</b></span>
+<div *ngIf="undefined !=appComponent.dataServiceService.myArrCards[0]" id="content-card">
+  <span class="cardName"><b>{{cardNumber != 1?appComponent.dataServiceService.otherArrCards[0].Name:appComponent.dataServiceService.myArrCards[0].Name}}</b></span>
     <div class="row-card">
       <div (click)="appComponent.toggleOtherCard(1);appComponent.dataServiceService.setSelCardField(1)" class="column-card" [class.selCrdFieldEffect]="appComponent.dataServiceService.getSelCardField() == 1">
         Rank: {{cardNumber != 1?dataServiceService.otherArrCards[0].Rank:dataServiceService.myArrCards[0].Rank}}

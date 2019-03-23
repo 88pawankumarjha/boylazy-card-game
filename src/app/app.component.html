@@ -20,35 +20,35 @@
     <div *ngIf="undefined !=dataServiceService.otherArrCards" [hidden]="!showOtherCard" id="header">
       <sg-app-card cardNumber="2" card={{dataServiceService.otherArrCards[0]}}></sg-app-card>
     </div>
+    <div [hidden]="showOtherCard" id="header">
+    </div>
     <div id="content">
-      
-      <div class="gameProgress">
-        <mat-progress-bar class="halfWidth" color="accent" mode="determinate" [value]="(((myScore)/dataServiceService.half_length)*100)"></mat-progress-bar>
-        <mat-progress-bar  class="halfWidth" color="warn" mode="determinate" [value]="((otherScore)/dataServiceService.half_length)*100"></mat-progress-bar>
-      </div>
-      <div class="gameProgress">
-        <mat-progress-bar class="halfWidth" color="accent" mode="determinate" [value]="(((myScore)/dataServiceService.half_length)*100)"></mat-progress-bar>
-        <mat-progress-bar  class="halfWidth" color="warn" mode="determinate" [value]="((otherScore)/dataServiceService.half_length)*100"></mat-progress-bar>
-      </div>
-
+      <app-game-progress [myProgressValue]="(((myScore)/dataServiceService.half_length)*100)" [otherProgressValue]="(((otherScore)/dataServiceService.half_length)*100)"></app-game-progress>
+      <app-game-progress [myProgressValue]="(((myScore)/dataServiceService.half_length)*100)" [otherProgressValue]="(((otherScore)/dataServiceService.half_length)*100)"></app-game-progress>
       <div class="row">
         <div class="column1" [style.background-image]="'url('+dataServiceService.fetchMyCard()+')'" (click)="showCard()" [ngClass]="{'overlayHigh': firstLoad}">
-        <span class="score">{{myScore}}/{{dataServiceService.half_length}}</span>
-        <span *ngIf="myScore==0 && otherScore==0 && !firstLoad==false" class="hint">
-          Click here to start!
-            <mat-toolbar-row>
-              <mat-icon class="example-start-icon">touch_app</mat-icon>
-            </mat-toolbar-row>
-        </span></div>
+          <span class="score">{{myScore}}/{{dataServiceService.half_length}}</span>
+          
+          <span *ngIf="myScore==0 && otherScore==0 && !firstLoad==false" class="hint">
+            Click here!
+              <mat-toolbar-row class="example-start-icon-wrapper">
+                <mat-icon class="example-start-icon">touch_app</mat-icon>
+              </mat-toolbar-row>
+          </span>
+        </div>
         <div class="columnLogo">
         </div>
 
         <div class="column1" [style.background-image]="'url('+dataServiceService.fetchOtherCard()+')'" [ngClass]="{'overlay': !showOtherCard}"><span class="score">{{otherScore}}/{{dataServiceService.half_length}}</span>
         </div>        
       </div>
+      <app-game-progress [myProgressValue]="(((myScore)/dataServiceService.half_length)*100)" [otherProgressValue]="(((otherScore)/dataServiceService.half_length)*100)"></app-game-progress>
+      <app-game-progress [myProgressValue]="(((myScore)/dataServiceService.half_length)*100)" [otherProgressValue]="(((otherScore)/dataServiceService.half_length)*100)"></app-game-progress>
     </div>
     <div *ngIf="undefined !=dataServiceService.myArrCards" [hidden]="firstLoad" id="footer">
       <sg-app-card cardNumber="1" card={{dataServiceService.myArrCards[0]}}></sg-app-card>
+    </div>
+    <div [hidden]="!firstLoad" id="footer">
     </div>
   </div>
 </div>

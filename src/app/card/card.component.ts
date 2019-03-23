@@ -13,7 +13,7 @@ export class CardComponent implements OnInit {
   myCard = [];
   otherCard = [];
 
-  constructor(private dataServiceService: DataServiceService, private appComponent: AppComponent){ 
+  constructor(public dataServiceService: DataServiceService, public appComponent: AppComponent){ 
     // this.myCard = this.dataServiceService.myCard;
     this.otherCard = this.dataServiceService.otherCard;
 

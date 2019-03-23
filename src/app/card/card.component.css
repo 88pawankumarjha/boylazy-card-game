@@ -6,7 +6,7 @@
 }
 
 div#content-card{
-  background-color:rgb(238, 39, 39);
+  /* background-color:rgb(238, 39, 39); */
   width:var(--commonWidth);
   height:var(--commonHeight);
   position:fixed;
@@ -17,15 +17,16 @@ text-align: center;
 .column-card{
   flex: 50%;
   height: var(--cardHeight);
-  border-bottom: 0.25vh solid yellow;
-  border-top: 0.25vh solid yellow;
+  /* border-bottom: 0.25vh solid white; */
+  border-top: 0.25vh solid white;
+  margin: 0em 1em 0em 1em;
   border-radius: 20%;
   color:white;
   vertical-align: middle;
   line-height: var(--cardHeight);
 }
 .cardName{
-  background-color: rgb(123, 31, 162);
+  /* background-color: rgba(123, 31, 162, 0.336); */
   color:white;
 }
 .selCrdFieldEffect{
@@ -34,13 +35,13 @@ text-align: center;
 }
 /* Standard syntax */
 @keyframes mymove {
-  from {background-color: rgb(123, 31, 162);}
-  90%{background-color: rgb(123, 31, 162)}
-  to {background-color: rgb(238, 39, 39);}
+  from {background: linear-gradient(to right, var(--headerColor), #6f00001e);}
+  60%{background: linear-gradient(to right, var(--headerColor), #6f00001e);}
+  to {background: linear-gradient(to right, var(--headerColor), #6f00001e);}
 }
 /* Safari 4.0 - 8.0 */
 @-webkit-keyframes mymove {
   from {background-color: rgb(123, 31, 162);}
-  90%{background-color: rgb(123, 31, 162)}
-  to {background-color: rgb(238, 39, 39);}
+  60%{background-color: rgb(123, 31, 162)}
+  to {background-color: rgba(238, 39, 39, 0.329);}
 }

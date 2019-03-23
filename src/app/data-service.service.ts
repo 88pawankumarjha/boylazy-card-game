@@ -11,12 +11,12 @@ export class DataServiceService {
   selCardField =0;
   myCard = ['Name:RomanReigns', 'Rank:1', 'Height:6.3', 'Weight:250', 'Fights Won:235'];
   otherCard = ['Name:SamoaJoe', 'Rank:2', 'Height:6.3', 'Weight:350', 'Fights Won:95'];
-  arrCards: string [];
+  arrCards;
   myCard1;
   otherCard1;
   myArrCards;
   otherArrCards;
-  half_length:0;
+  half_length=0;
   constructor (private httpService: HttpClient) { 
     this.initApp();
   }

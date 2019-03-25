@@ -84,5 +84,9 @@ shuffle(array) {
   return array;
 }
 
+openURL(stringURL){
+    window.open(stringURL, "_blank");
+}
+
 
 }

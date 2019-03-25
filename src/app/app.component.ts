@@ -9,15 +9,13 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class AppComponent  {
 
-  theResult;
+  theResult=-1;
   showOverlay=false;
   myScore=0;
   otherScore=0;
-  resultMessage;
+  resultMessage="";
   firstLoad=true;
   showOtherCard=false;
-  myCard;
-  otherCard;
   dataServiceService;
   constructor(private dataServiceServiceInstance: DataServiceService, private toastr: ToastrService){
     this.dataServiceService = dataServiceServiceInstance;
@@ -31,8 +29,6 @@ export class AppComponent  {
     this.resultMessage="";
     this.firstLoad=true;
     this.showOtherCard=false;
-    this.myCard;
-    this.otherCard;
     this.dataServiceService.initApp();
   }
 
@@ -142,9 +138,5 @@ export class AppComponent  {
       this.resultMessage = "Your "+label+ " was not good enough.";
       this.showError();
     }
-  }
-
-  refreshApp(){
-    location.reload();
   }
 }

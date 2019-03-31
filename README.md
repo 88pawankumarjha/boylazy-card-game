@@ -1,5 +1,5 @@
 Angular Card Game 
 
-# wwe-cards
+# boylazy-card-game
 
 [Edit on StackBlitz ⚡️](https://stackblitz.com/edit/boylazy-card-game)

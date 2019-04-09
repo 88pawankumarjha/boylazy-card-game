@@ -6,15 +6,15 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 })
 export class DataServiceService {
 
-  private zero = 0;
-  private selCardField = 0;
-  private myCard = ['Name:RomanReigns', 'Rank:1', 'Height:6.3', 'Weight:250', 'Fights Won:235'];
-  private otherCard = ['Name:SamoaJoe', 'Rank:2', 'Height:6.3', 'Weight:350', 'Fights Won:95'];
-  private arrCards;
-  private myCard1;
-  private otherCard1;
-  private myArrCards;
-  private otherArrCards;
+  private zero:number = 0;
+  private selCardField:number = 0;
+  private myCard:String[] = ['Name:RomanReigns', 'Rank:1', 'Height:6.3', 'Weight:250', 'Fights Won:235'];
+  private otherCard:String[] = ['Name:SamoaJoe', 'Rank:2', 'Height:6.3', 'Weight:350', 'Fights Won:95'];
+  private arrCards:String[];
+  private myCard1:String[];
+  private otherCard1:String[];
+  private myArrCards:String[];
+  private otherArrCards:String[];
   private half_length = 0;
 
   constructor(private httpService: HttpClient) {
@@ -31,7 +31,7 @@ export class DataServiceService {
       },
     )
   }
-  private setSelCardField(index) {
+  private setSelCardField(index:number) {
     this.selCardField = index;
     setTimeout(() => {
       this.selCardField = 0;
@@ -60,7 +60,7 @@ export class DataServiceService {
   private getMyCard() {
     return this.myCard1;
   }
-  getOtherCard() {
+  private getOtherCard() {
     return this.otherCard1;
   }
 
@@ -70,7 +70,7 @@ export class DataServiceService {
     this.otherArrCards = this.myArrCards.splice(this.zero, this.half_length);
   }
 
-  private shuffle(array) {
+  private shuffle(array:Array<number>) {
     var currentIndex = array.length, temporaryValue, randomIndex;
     while (this.zero !== currentIndex) {
       // Pick a remaining element...
@@ -85,7 +85,7 @@ export class DataServiceService {
     return array;
   }
 
-  private openURL(stringURL) {
+  private openURL(stringURL:string) {
     window.open(stringURL, "_blank");
   }
 

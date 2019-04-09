@@ -6,21 +6,22 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 })
 export class DataServiceService {
 
-  private zero: number = 0;
-  private selCardField: number = 0;
-  private myCard: String[] = ['Name:RomanReigns', 'Rank:1', 'Height:6.3', 'Weight:250', 'Fights Won:235'];
-  private otherCard: String[] = ['Name:SamoaJoe', 'Rank:2', 'Height:6.3', 'Weight:350', 'Fights Won:95'];
-  private arrCards: String[];
-  private myCard1: String[];
-  private otherCard1: String[];
-  private myArrCards: String[];
-  private otherArrCards: String[];
-  private half_length: number = 0;
+  private zero = 0;
+  private delay = 2000;
+  private selCardField = this.zero;
+  private myCard: string[] = ['Name:RomanReigns', 'Rank:1', 'Height:6.3', 'Weight:250', 'Fights Won:235'];
+  private otherCard: string[] = ['Name:SamoaJoe', 'Rank:2', 'Height:6.3', 'Weight:350', 'Fights Won:95'];
+  private arrCards: string[];
+  private myCard1: string[];
+  private otherCard1: string[];
+  private myArrCards: string[];
+  private otherArrCards: string[];
+  private half_length = this.zero;
 
   constructor(private httpService: HttpClient) {
     this.initApp();
   }
-  private initApp() {
+  private initApp(): void {
     this.httpService.get('./assets/cards.json').subscribe(
       data => {
         this.arrCards = data as string[];
@@ -31,25 +32,25 @@ export class DataServiceService {
       },
     )
   }
-  private setSelCardField(index: number) {
+  private setSelCardField(index: number): void {
     this.selCardField = index;
     setTimeout(() => {
-      this.selCardField = 0;
-      this.myArrCards.splice(0, 1);
-      this.otherArrCards.splice(0, 1);
-    }, 2000);
+      this.selCardField = this.zero;
+      this.myArrCards.splice(this.zero, 1);
+      this.otherArrCards.splice(this.zero, 1);
+    }, this.delay);
   }
-  private getSelCardField() {
+  private getSelCardField(): number {
     return this.selCardField;
   }
 
-  private fetchMyCard() {
+  private fetchMyCard(): string {
     if (undefined != this.myArrCards && this.myArrCards.length != this.zero)
       return this.myArrCards[this.zero].URL;
     else
       return "#";
   }
-  private fetchOtherCard() {
+  private fetchOtherCard(): string {
     if (undefined != this.otherArrCards && this.otherArrCards.length != this.zero)
       return this.otherArrCards[this.zero].URL;
     else
@@ -57,20 +58,20 @@ export class DataServiceService {
       "https://bit.ly/2U5IUkj"
   }
 
-  private getMyCard() {
+  private getMyCard(): Array<string>{
     return this.myCard1;
   }
-  private getOtherCard() {
+  private getOtherCard(): Array<string>{
     return this.otherCard1;
   }
 
-  private shuffleAndDistributeCards() {
+  private shuffleAndDistributeCards(): void {
     this.myArrCards = this.shuffle(this.arrCards);
     this.half_length = Math.ceil(this.myArrCards.length / 2);
     this.otherArrCards = this.myArrCards.splice(this.zero, this.half_length);
   }
 
-  private shuffle(array:Array<String>) {
+  private shuffle(array: Array<string>): Array<string> {
     var currentIndex = array.length, temporaryValue, randomIndex;
     while (this.zero !== currentIndex) {
       // Pick a remaining element...
@@ -85,7 +86,7 @@ export class DataServiceService {
     return array;
   }
 
-  private openURL(stringURL: string) {
+  private openURL(stringURL: string): void {
     window.open(stringURL, "_blank");
   }
 

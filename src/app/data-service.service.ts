@@ -6,8 +6,9 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 })
 export class DataServiceService {
 
-  private zero: number = 0;
-  private delay: number = 2000;
+  private const: number[] = [0,2000];
+  private zero: number = this.const[0];
+  private delay: number = this.const[1];
   private selCardField: number = this.zero;
   private half_length: number = this.zero;
 

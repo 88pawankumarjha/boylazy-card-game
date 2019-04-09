@@ -6,11 +6,10 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 })
 export class DataServiceService {
 
-  private const: number[] = [0,2000];
-  private zero: number = this.const[0];
-  private delay: number = this.const[1];
-  private selCardField: number = this.zero;
-  private half_length: number = this.zero;
+  private static zero: number = 0;
+  private static delay: number = 2000;
+  private selCardField: number = DataServiceService.zero;
+  private half_length: number = DataServiceService.zero;
 
   private myCard: string[] = ['Name:RomanReigns', 'Rank:1', 'Height:6.3', 'Weight:250', 'Fights Won:235'];
   private otherCard: string[] = ['Name:SamoaJoe', 'Rank:2', 'Height:6.3', 'Weight:350', 'Fights Won:95'];
@@ -37,23 +36,23 @@ export class DataServiceService {
   private setSelCardField(index: number): void {
     this.selCardField = index;
     setTimeout(() => {
-      this.selCardField = this.zero;
-      this.myArrCards.splice(this.zero, 1);
-      this.otherArrCards.splice(this.zero, 1);
-    }, this.delay);
+      this.selCardField = DataServiceService.zero;
+      this.myArrCards.splice(DataServiceService.zero, 1);
+      this.otherArrCards.splice(DataServiceService.zero, 1);
+    }, DataServiceService.delay);
   }
   private getSelCardField(): number {
     return this.selCardField;
   }
   private fetchMyCard(): string {
-    if (undefined != this.myArrCards && this.myArrCards.length != this.zero)
-      return this.myArrCards[this.zero].URL;
+    if (undefined != this.myArrCards && this.myArrCards.length != DataServiceService.zero)
+      return this.myArrCards[DataServiceService.zero].URL;
     else
       return "#";
   }
   private fetchOtherCard(): string {
-    if (undefined != this.otherArrCards && this.otherArrCards.length != this.zero)
-      return this.otherArrCards[this.zero].URL;
+    if (undefined != this.otherArrCards && this.otherArrCards.length != DataServiceService.zero)
+      return this.otherArrCards[DataServiceService.zero].URL;
     else
       return
       "https://bit.ly/2U5IUkj"
@@ -67,11 +66,11 @@ export class DataServiceService {
   private shuffleAndDistributeCards(): void {
     this.myArrCards = this.shuffle(this.arrCards);
     this.half_length = Math.ceil(this.myArrCards.length / 2);
-    this.otherArrCards = this.myArrCards.splice(this.zero, this.half_length);
+    this.otherArrCards = this.myArrCards.splice(DataServiceService.zero, this.half_length);
   }
   private shuffle(array: Array<string>): Array<string> {
     var currentIndex = array.length, temporaryValue, randomIndex;
-    while (this.zero !== currentIndex) {
+    while (DataServiceService.zero !== currentIndex) {
       // Pick a remaining element...
       randomIndex = Math.floor(Math.random() * currentIndex);
       currentIndex -= 1;

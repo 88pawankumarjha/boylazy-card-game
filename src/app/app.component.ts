@@ -31,7 +31,7 @@ export class AppComponent  {
   }
 
   private resetApp(): void{
-    this.theResult=-1;
+    this.theResult=AppComponent.minusOne;
     this.showOverlay=false;
     this.myScore=AppComponent.zero;
     this.otherScore=AppComponent.zero;

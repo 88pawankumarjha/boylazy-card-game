@@ -4,8 +4,8 @@ import { AppComponent } from '../app.component'
 
 @Component({
   selector: 'sg-app-card',
+  styleUrls: ['./card.component.css'],
   templateUrl: './card.component.html',
-  styleUrls: ['./card.component.css']
 })
 export class CardComponent implements OnInit {
   @Input() cardNumber: string;
@@ -13,12 +13,12 @@ export class CardComponent implements OnInit {
 
   constructor(public dataServiceService: DataServiceService, public appComponent: AppComponent){
   }
-  getKeys(map){
+  private getKeys(map): Array<any>{
       return Array.from(map.keys());
   }
   ngOnInit() {
   }
-  heightConverter(n){
+  private heightConverter(n): string{
       var realFeet = ((n*0.393700) / 12);
       var feet = Math.floor(realFeet);
       var inches = Math.round((realFeet - feet) * 12);

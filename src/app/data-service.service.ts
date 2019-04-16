@@ -22,7 +22,7 @@ export class DataServiceService {
   constructor(private httpService: HttpClient) {
     this.initApp();
   }
-  private initApp(): void {
+  public initApp(): void {
     this.httpService.get('./assets/cards.json').subscribe(
       data => {
         this.arrCards = data as string[];

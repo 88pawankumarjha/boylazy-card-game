@@ -4,108 +4,119 @@ import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'sg-my-app',
+  styleUrls: [ './app.component.css' ],
   templateUrl: './app.component.html',
-  styleUrls: [ './app.component.css' ]
 })
 export class AppComponent  {
 
-  theResult=-1;
-  showOverlay=false;
-  myScore=0;
-  otherScore=0;
-  resultMessage="";
-  firstLoad=true;
-  showOtherCard=false;
-  dataServiceService;
+  private static minusOne = -1;
+  private static zero = 0;
+  private static one = 1;
+  private static two = 2;
+  private static three = 3;
+  private static four = 4;
+  private static twoH = 200;
+  private static twoK = 2000;
+  private static tenK = 10000;
+  private theResult: number= AppComponent.minusOne;
+  private showOverlay: boolean=false;
+  private myScore: number=AppComponent.zero;
+  private otherScore: number=AppComponent.zero;
+  private resultMessage: string="";
+  private firstLoad: boolean=true;
+  private showOtherCard: boolean=false;
+  private dataServiceService: DataServiceService;
   constructor(private dataServiceServiceInstance: DataServiceService, private toastr: ToastrService){
     this.dataServiceService = dataServiceServiceInstance;
   }
 
-  resetApp(){
+  private resetApp(): void{
     this.theResult=-1;
     this.showOverlay=false;
-    this.myScore=0;
-    this.otherScore=0;
+    this.myScore=AppComponent.zero;
+    this.otherScore=AppComponent.zero;
     this.resultMessage="";
     this.firstLoad=true;
     this.showOtherCard=false;
     this.dataServiceService.initApp();
   }
 
-  showSuccess() {
+  private showSuccess(): void{
     this.myScore++;
     this.toastr.success(this.resultMessage, 'You\'re the winner!!',
-    {timeOut: 2000, positionClass: 'toast-bottom-center' });
+    {positionClass: 'toast-bottom-center', timeOut: AppComponent.twoK });
     
     setTimeout(() => {
       this.checkResult()
-    }, 2000);
+    }, AppComponent.twoK);
   }
-  showError() {
+  private showError(): void{
     this.otherScore++;
     this.toastr.error(this.resultMessage, 'You lose.', {
-    timeOut: 2000, positionClass: 'toast-bottom-center' });
+    positionClass: 'toast-bottom-center', timeOut: AppComponent.twoK });
     
     setTimeout(() => {
       this.checkResult()
-    }, 2000);
+    }, AppComponent.twoK);
   }
-  checkResult(){
+  private checkResult(): boolean{
     if(this.myScore + this.otherScore == this.dataServiceService.half_length){
       if(this.myScore >= this.otherScore){
-        this.toastr.info(this.myScore +' out of '+this.dataServiceService.half_length + ' fights won.','You have won the battle!! CLICK HERE to restart the battle.',
-    {closeButton: true, timeOut: 10000, positionClass: 'toast-center-center' }).onTap
+        this.toastr.info(this.myScore +' out of '+this.dataServiceService.half_length + ' fights won.',
+        'You have won the battle!! CLICK HERE to restart the battle.',
+    {closeButton: true, timeOut: AppComponent.tenK, positionClass: 'toast-center-center' }).onTap
     .subscribe(() => this.resetApp());
         return true;
         }else{
-          this.toastr.warning(this.myScore +' out of '+this.dataServiceService.half_length + ' fights lost.','You have lost the battle!! CLICK HERE to restart the battle.',
-    {closeButton: true, timeOut: 10000, positionClass: 'toast-center-center' }).onTap
+          this.toastr.warning(this.myScore +' out of '+this.dataServiceService.half_length + ' fights lost.',
+          'You have lost the battle!! CLICK HERE to restart the battle.',
+    {closeButton: true, timeOut: AppComponent.tenK, positionClass: 'toast-center-center' }).onTap
     .subscribe(() => this.resetApp());
         return true;
         }
       }
   }
-  showCard(){
+  private showCard(): void{
     if(!this.checkResult()){
       this.firstLoad=false;
       this.showOtherCard=false;
     }
   }
-  hideCard(){
+  private hideCard(): void{
     this.firstLoad=true;
     this.showOtherCard=false;
   }
 
-  stopDoubleClick(){
+  private stopDoubleClick(): void{
     this.showOverlay = true;
     setTimeout(() => {
       this.showOverlay = false;
-    }, 2000);
+    }, AppComponent.twoK);
   }
 
-  toggleOtherCard(index){
+  private toggleOtherCard(index): void{
     // stop double click
     this.stopDoubleClick();
     let myCardLabel = "";
     switch (index) {
-    case 1:
+    case AppComponent.one:
         myCardLabel="Rank"
         break;
-    case 2:
+    case AppComponent.two:
         myCardLabel="Height"
         break;
-    case 3:
+    case AppComponent.three:
         myCardLabel="Weight"
         break;
-    case 4:
+    case AppComponent.four:
         myCardLabel="WinPercent"
         break;
     default:
         myCardLabel="Rank"
         break;
     }
-    const myStr = "this.dataServiceService.myArrCards[0]."+myCardLabel;
-    const otherStr = "this.dataServiceService.otherArrCards[0]."+myCardLabel;
+    const myStr = "this.dataServiceService.myArrCards[AppComponent.zero]."+myCardLabel;
+    const otherStr = "this.dataServiceService.otherArrCards[AppComponent.zero]."+myCardLabel;
     const myCardValue = eval(myStr);
     const otherCardValue = eval(otherStr);
 
@@ -113,24 +124,24 @@ export class AppComponent  {
     setTimeout(() => {
         if(myCardLabel != "Rank") {
           +myCardValue >= +otherCardValue?
-            this.announceResult(1, myCardLabel, myCardValue, otherCardValue):
-            this.announceResult(2, myCardLabel, myCardValue, otherCardValue)
+            this.announceResult(1, myCardLabel):
+            this.announceResult(2, myCardLabel)
         } else{
           +myCardValue >= +otherCardValue?
-            this.announceResult(2, myCardLabel, myCardValue, otherCardValue):
-            this.announceResult(1, myCardLabel, myCardValue, otherCardValue)
+            this.announceResult(2, myCardLabel):
+            this.announceResult(1, myCardLabel)
         }
-    }, 200);
+    }, AppComponent.twoH);
 
     setTimeout(() => {
       this.hideCard();
-    }, 2000);
+    }, AppComponent.twoK);
 
   }
   
-  announceResult(number, label, v1, v2){
+  private announceResult(number, label): void{
     if(number==1){
-      this.theResult=0;
+      this.theResult=AppComponent.zero;
       this.resultMessage = "Your "+label+ " is better.";
       this.showSuccess();
     }else{

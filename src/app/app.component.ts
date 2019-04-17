@@ -94,7 +94,7 @@ export class AppComponent  {
     }, AppComponent.twoK);
   }
 
-  private toggleOtherCard(index): void{
+  private toggleOtherCard(index: number): void{
     // stop double click
     this.stopDoubleClick();
     let myCardLabel = "";
@@ -139,7 +139,7 @@ export class AppComponent  {
 
   }
   
-  private announceResult(number, label): void{
+  private announceResult(number: number, label: string): void{
     if(number==1){
       this.theResult=AppComponent.zero;
       this.resultMessage = "Your "+label+ " is better.";

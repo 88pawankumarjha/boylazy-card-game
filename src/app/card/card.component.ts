@@ -8,19 +8,17 @@ import { AppComponent } from '../app.component'
   templateUrl: './card.component.html',
 })
 export class CardComponent implements OnInit {
-  @Input() cardNumber: string;
-  @Input() card: string [];
+  @Input() private cardNumber: string;
+  @Input() private card: string [];
 
   constructor(public dataServiceService: DataServiceService, public appComponent: AppComponent){
   }
-  private getKeys(map): Array<any>{
-      return Array.from(map.keys());
+  
+  public ngOnInit() {
   }
-  ngOnInit() {
-  }
-  private heightConverter(n): string{
-      var realFeet = ((n*0.393700) / 12);
-      var feet = Math.floor(realFeet);
+  private heightConverter(n: number): string{
+      const realFeet = ((n*0.393700) / 12);
+      const feet = Math.floor(realFeet);
       var inches = Math.round((realFeet - feet) * 12);
       return feet + "\'" + inches;
   }

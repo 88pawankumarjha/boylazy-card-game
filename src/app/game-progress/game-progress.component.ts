@@ -4,12 +4,12 @@ import { AppComponent } from '../app.component'
 
 @Component({
   selector: 'app-game-progress',
+  styleUrls: ['./game-progress.component.css'],
   templateUrl: './game-progress.component.html',
-  styleUrls: ['./game-progress.component.css']
 })
 export class GameProgressComponent {
-  @Input() myProgressValue: string;
-  @Input() otherProgressValue: string;
+  @Input() private myProgressValue: string;
+  @Input() private otherProgressValue: string;
   
   constructor(appComponent: AppComponent) { }
 

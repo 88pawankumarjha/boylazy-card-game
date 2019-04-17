@@ -19,7 +19,7 @@ export class CardComponent implements OnInit {
   private heightConverter(n: number): string{
       const realFeet = ((n*0.393700) / 12);
       const feet = Math.floor(realFeet);
-      var inches = Math.round((realFeet - feet) * 12);
+      const inches = Math.round((realFeet - feet) * 12);
       return feet + "\'" + inches;
   }
 }

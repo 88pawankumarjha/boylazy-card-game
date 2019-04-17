@@ -28,7 +28,7 @@ import { GameProgressComponent } from './game-progress/game-progress.component';
   MatButtonModule,
   MatCheckboxModule,
   MatIconModule ],
-  declarations: [ AppComponent, HelloComponent, CardComponent, GameProgressComponent ],
+  declarations: [ AppComponent, CardComponent, GameProgressComponent, HelloComponent ],
   bootstrap:    [ AppComponent ],
   providers: [DataServiceService]
 })
